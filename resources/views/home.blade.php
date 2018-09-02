@@ -74,8 +74,8 @@
         <div class="col-md-6">           
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                        <a href="" style="color:#fff;"><span>Patient</span></a>
-                        <a href="" style="color:#fff;" Class="pull-right glyphicon glyphicon-plus"></a>
+                        <a href="{{URL::to('/patient')}}" style="color:#fff;"><span>Patient</span></a>
+                        <a href="{{URL::to('/patient/create')}}" style="color:#fff;" Class="pull-right glyphicon glyphicon-plus"></a>
                 </div>
                 <div class="panel-body">
                     <div class="panel-group" id="accordion">

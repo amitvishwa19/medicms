@@ -21,4 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('patient','PatientControler');
 
-Route::get('/patient', 'HomeController@patient');
+

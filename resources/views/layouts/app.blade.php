@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
 
     <!-- Fonts -->
@@ -17,9 +17,13 @@
 
     <!-- Styles -->
     <link href="{{URL::to('/')}}/public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{URL::to('/')}}/public/fonts/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-    
+    <style>
+        .my-add-new-button{
+            margin-top: -5px;
+        }
+    </style>
 
 </head>
 <body>
@@ -74,10 +78,28 @@
         <main class="py-4">
             @yield('content')
         </main>
+        
+        <div class="container">
+            
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-        @section("patients")
+            @if(session()->has('patientmessage'))
+                <div class="alert alert-success">{{session()->get('patientmessage')}}</div>
+            @endif
 
-        @show
+            @section("body")
+
+            @show
+        </div>
+        
     </div>
 
 
