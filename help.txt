@@ -8,3 +8,16 @@ create table from migration :: php artisan migrate:rollback //will will delete t
 create table from migration :: php artisan migrate:rollback --step=3 //will will delete the tables as pe execution number
 create table from migration :: php artisan migrate:reset //will drop all table
 create table from migration :: php artisan migrate:refresh //will will delete the tables and create new as per migration file
+
+
+
+
+//creating model and migration file
+php artisan make:model patient -m
+
+
+
+//font awsome
+npm install font-awesome --save-dev
+resources/assets/sass/app.scss file = @import "~font-awesome/scss/font-awesome";
+npm run dev
