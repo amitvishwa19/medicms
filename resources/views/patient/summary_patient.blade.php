@@ -1,1 +1,7 @@
-summary_patient.blade.php
+@section('patient_summary')
+
+
+
+
+
+@endsection

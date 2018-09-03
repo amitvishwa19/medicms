@@ -3,7 +3,7 @@
 @section('title','Patients | MediCMS')
 
 
-@section("body")
+@section("body_patient")
 	
 
 		<!--Page header-->	
@@ -37,7 +37,8 @@
 		<div id="top_buttons" class="hidden-print">
 		    <div class="btn-group visible-md visible-lg all_records pull-left">
 		        
-		      
+
+				<a href="{{url('patient/create')}}" class="btn btn-success "><i class="fa fa-plus" aria-hidden="true"></i>  Add New</a>
 		        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
 		            <i class="fa fa-print" aria-hidden="true"></i>
 		            Print Preview       
@@ -67,15 +68,15 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					patients
-					<a href="{{url('patient/create')}}" class="btn btn-success btn-sm pull-right my-add-new-button">Add New</a> 
+					<!--a href="{{url('patient/create')}}" class="btn btn-success btn-sm pull-right my-add-new-button">Add New</a--> 
+					<a href="{{url('home')}}" style="color:#fff;margin-top:5px !important;"><i class="fa fa-home pull-right" aria-hidden="true"></i></a>
 				</div>
 				<div class="panel-body">			
 				    <div class="table_view col-xs-12 ">
 				        <div class="table-responsive">
 					        <table class="table" >
 					            <thead>
-					                <tr>
-					                  
+					                <tr>					                  
 					                    <th class="patients-last_name">
 					                        <a href="" class="TableHeader">
 					                            Last name
@@ -125,15 +126,13 @@
 					                        <a href="" class="TableHeader">
 					                            Delete
 					                        </a>
-					                    </th>
-					                    
-
+					                    </th>					                
 						           </tr>
 					            </thead>
 					            
 					            <tbody><!-- tv data below -->		             
 					                  
-					                @foreach($patients as $patient)				                	
+					            @foreach($patients as $patient)				                	
 					                  
 					                <tr id="{{$patient-> id}}" data-toggle="modal" data-target="#myModal-edit" class="table-row">                               
 					                    <td >{{$patient-> lastname}}</td>
@@ -144,11 +143,18 @@
 					                    <td>{{$patient-> tobaco_usage}}</td>
 					                    <td>{{$patient-> alcohol_intake}}</td>
 					                    <td>{{$patient-> mobile}}</td>
-										<td><a href="{{url('patient/' .$patient->id. '/edit')}}" class="btn btn-warning btn-sm"> Edit </a></td>
-					                    <td><a href="{{url('patient/' .$patient->id. '/delete')}}" class="btn btn-danger btn-sm">Delete</a></td>
+										<td><a href="{{url('patient/' .$patient->id. '/edit')}}" class="btn btn-warning btn-xs"> Edit </a></td>
+										<td>
+										<form action="{{ action('PatientControler@store')}}/{{$patient->id}}" class="pull-right" method="post">
+											{{csrf_field()}}
+											{{method_field('DELETE')}}
+											<button class="btn btn-danger btn-xs" type="submit">Delete</button>
+										</form>
+										</td>
+					                    
 
 					                </tr>
-					                @endforeach
+					            @endforeach
 					                            		               
 					            </tbody>
 

@@ -21,7 +21,7 @@
 
     <style>
         .my-add-new-button{
-            margin-top: -5px;
+            margin-top: -3px;
         }
     </style>
 
@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="{{url('home')}}">{{config('app.name')}}</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,6 +81,7 @@
         
         <div class="container">
             
+            <!--Error list-->
             @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -91,13 +92,22 @@
                 </div>
             @endif
 
+            <!--Patient addition success message-->
             @if(session()->has('patientmessage'))
                 <div class="alert alert-success">{{session()->get('patientmessage')}}</div>
             @endif
 
-            @section("body")
-
+            @section("body_patient")
             @show
+
+            @section("body_patient_add")
+            @show
+
+            @section("body_patient_edit")
+            @show
+         
+
+
         </div>
         
     </div>

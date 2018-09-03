@@ -21,3 +21,31 @@ php artisan make:model patient -m
 npm install font-awesome --save-dev
 resources/assets/sass/app.scss file = @import "~font-awesome/scss/font-awesome";
 npm run dev
+
+
+
+//Same for addition and edit
+@extends('patient.new_patient')
+
+@section('title','Edit Patient | MediCMS')
+
+<?php //print_r($patient); ?>
+
+@section('patient_id',$patient->id)
+@section('first_name',$patient->firstname)
+@section('last_name',$patient->lastname)
+@section('gender',$patient->gender)
+@section('gender',$patient->gender)
+@section('birth_date',$patient->birth_date)
+@section('email',$patient->email)
+@section('mobile',$patient->mobile)
+
+
+
+
+
+@section('edit_patient')
+
+    {{method_field('PUT')}}
+
+@endsection
