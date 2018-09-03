@@ -145,7 +145,7 @@
 					                    <td>{{$patient-> alcohol_intake}}</td>
 					                    <td>{{$patient-> mobile}}</td>
 										<td><a href="{{url('patient/' .$patient->id. '/edit')}}" class="btn btn-warning btn-sm"> Edit </a></td>
-					                    <td><a href="" class="btn btn-danger btn-sm">Delete</a></td>
+					                    <td><a href="{{url('patient/' .$patient->id. '/delete')}}" class="btn btn-danger btn-sm">Delete</a></td>
 
 					                </tr>
 					                @endforeach

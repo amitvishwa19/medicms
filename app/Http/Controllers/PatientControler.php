@@ -113,6 +113,6 @@ class PatientControler extends Controller
      */
     public function destroy($id)
     {
-        //
+         return view('patient.delete_patient');
     }
 }
