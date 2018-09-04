@@ -38,12 +38,14 @@ class PatientControler extends Controller
         $data = Validator::make($request->all(),[
             'firstname'=>'required|max:255',
             'lastname'=>'required|max:255',
-            'email'=>'required|max:255|email'
+            'email'=>'required|max:255|email',
+            'birthdate'=>'required|date|date_format:Y-m-d|before:tomorrow'
         ],[
             'firstname.required' => 'First name is required',
             'lastname.required' => 'Last name is required',
             'email.required' => 'Email is required',
-            'email.email' => 'Please enter a valid email'
+            'email.email' => 'Please enter a valid email',
+            'birthdate.required' => 'Please enter valid date of birth'
         ])->Validate();
 
         //Saving the date
@@ -52,6 +54,7 @@ class PatientControler extends Controller
         $obj->lastname = $request->lastname;
         $obj->gender = $request->gender;
         $obj->email = $request->email; 
+        $obj->birth_date = $request->birthdate; 
         $obj->created_dt = date('y-m-d h:i:s');
         $is_saved = $obj->save();
         if($is_saved){
@@ -117,7 +120,7 @@ class PatientControler extends Controller
        $is_saved = $patient->save();
        if($is_saved){
             session()->flash('patientmessage','Patient data Updated Successfully');
-            return redirect('patient/'.$id.'/edit');
+            return redirect('patient/');
         }{
             session()->flash('patientmessage','Data Not Saved');
             return redirect('patient/'.$id.'/edit');

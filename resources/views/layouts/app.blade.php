@@ -17,7 +17,10 @@
 
     <!-- Styles -->
     <link href="{{URL::to('/')}}/public/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
+          integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link href="{{URL::to('/')}}/public/css/main.css" rel="stylesheet">
+
 
     <style>
         .my-add-new-button{
@@ -46,7 +49,10 @@
                     @guest
                     @else
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>               
+                            <li class="active"><a href="#">Patients <span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="#">Appoitments <span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="#">Reports <span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="#">Disease Symptoms <span class="sr-only">(current)</span></a></li>               
                         </ul>
                     @endguest
 
@@ -81,10 +87,11 @@
         
         <div class="container">
             
-            <!--Error list-->
+            <!--Error list-->          
             @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
+                       
                         @foreach($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
@@ -115,7 +122,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{URL::to('/')}}/public/js/jquery.js"></script>	
 	<script src="{{URL::to('/')}}/public/js/bootstrap.min.js"></script>
-    <script src="{{URL::to('/')}}/public/js/app.js"></script>
+    <script src="{{URL::to('/')}}/public/js/main.js"></script>
 
 </body>
 </html>

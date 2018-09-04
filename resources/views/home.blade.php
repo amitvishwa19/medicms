@@ -2,6 +2,8 @@
 
 @section('content')
 
+<?php print_r($patients) ?>
+
 <div class="content-wrapper container">
  
 
@@ -52,66 +54,34 @@
         <!--Patient-->
         <div class="col-md-6">           
             <div class="panel panel-primary">
+
                 <div class="panel-heading">
                         <a href="{{URL::to('/patient')}}" style="color:#fff;"><span>Patient</span></a>
-                        <a href="{{URL::to('/patient/create')}}" style="color:#fff;" Class="pull-right glyphicon glyphicon-plus"></a>
+                        <a href="{{url('patient/create')}}" style="color:#fff;" Class="pull-right glyphicon glyphicon-plus"></a>
                 </div>
+
                 <div class="panel-body">
                     <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                    Jaideep Singh
-                                </a>
-                                <a href="">
-                                    <i class="fa fa-eye pull-right" aria-hidden="true"></i>
-                                </a>
-                            </h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="user-summary">
-                                        name
-                                        last visited
+                                                
+                        @foreach($patients as $patient)
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#{{$patient-> id}}">
+                                            {{$patient-> firstname}},{{$patient-> lastname}}
+                                        </a>
+                                        <a href="{{url('patient/' .$patient->id. '/edit')}}"><i class="fa fa-eye pull-right" aria-hidden="true"></i></a>
+                                    
+                                </div>
+                                <div id="{{$patient-> id}}" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                                
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                       Patient 2
-                                    </a>
-                                    <a href="">
-                                        <i class="fa fa-eye pull-right" aria-hidden="true"></i>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapse2" class="panel-collapse collapse">
-                                <div class="panel-body">                                       
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                    Patient 3
-                                </a>
-                                <a href="">
-                                <i class="fa fa-eye pull-right" aria-hidden="true"></i>
-                                </a>
-                                </h4>
-                            </div>
-                            <div id="collapse3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                            
-                                </div>
-                            </div>
-                        </div>
-
+                        
+                        @endforeach
+                        
                     </div>                       
 
                 </div>
@@ -132,6 +102,7 @@
         </div><!--Appointments-->
 
     </div><!--Row-->
+
 </div>
         
       
