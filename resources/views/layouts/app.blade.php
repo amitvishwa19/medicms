@@ -97,14 +97,13 @@
                 <div class="alert alert-success">{{session()->get('patientmessage')}}</div>
             @endif
 
-            @section("body_patient")
+            @section("body")
             @show
 
-            @section("body_patient_add")
+             @section("new_body")
             @show
 
-            @section("body_patient_edit")
-            @show
+        
          
 
 
