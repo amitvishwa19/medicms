@@ -184,13 +184,13 @@
             <div class="form-group">
                 <label for="surgical_history" class="control-label col-lg-3">Surgical history</label>
                 <div class="col-lg-9">
-                    <textarea class="form-control input-sm" name="surgical_history" id="surgical_history" rows="5"></textarea>
+                    <textarea class="form-control input-sm" name="surgical_history" id="surgical_history" rows="3"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label for="obstetric_history" class="control-label col-lg-3">Obstetric history</label>
                 <div class="col-lg-9">
-                    <textarea class="form-control input-sm" name="obstetric_history" id="obstetric_history" rows="5"></textarea>
+                    <textarea class="form-control input-sm" name="obstetric_history" id="obstetric_history" rows="3"></textarea>
                 </div>
             </div>
             <div class="form-group">
@@ -204,7 +204,7 @@
                     Other details
                 </label>
                 <div class="col-lg-9">
-                    <textarea class="form-control input-sm" name="other_details" id="other_details" rows="5"></textarea>
+                    <textarea class="form-control input-sm" name="other_details" id="other_details" rows="3"></textarea>
                 </div>
             </div>
             <div class="form-group">
@@ -212,7 +212,7 @@
                     Comments
                 </label>
                 <div class="col-lg-9">						
-                    <textarea class="form-control input-sm" name="comments" id="comments" rows="5"></textarea>
+                    <textarea class="form-control input-sm" name="comments" id="comments" rows="3"></textarea>
                 </div>
             </div>
                 

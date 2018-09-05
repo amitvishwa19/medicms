@@ -29,23 +29,9 @@ npm run dev
 
 @section('title','Edit Patient | MediCMS')
 
-<?php //print_r($patient); ?>
+//Installation command
+composer create-project --prefer-dist laravel/laravel "Folder name"
 
-@section('patient_id',$patient->id)
-@section('first_name',$patient->firstname)
-@section('last_name',$patient->lastname)
-@section('gender',$patient->gender)
-@section('gender',$patient->gender)
-@section('birth_date',$patient->birth_date)
-@section('email',$patient->email)
-@section('mobile',$patient->mobile)
+//ssh command
+$ ssh -p 65002 u572845961@31.220.104.153
 
-
-
-
-
-@section('edit_patient')
-
-    {{method_field('PUT')}}
-
-@endsection
